@@ -1,0 +1,6 @@
+﻿services:
+  nosql.mongodb.api:
+    image: nosql.mongodb.api
+    build:
+      context: .
+      dockerfile: NoSQL.MongoDB.Api/Dockerfile
