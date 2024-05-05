@@ -1,0 +1,36 @@
+### GET all actors
+GET {{host}}/Actors
+Accept: application/json
+
+### GET actor by id
+GET {{host}}/Actors/663753841129221727af4962
+
+### POST actor
+POST {{host}}/Actors
+Content-Type: application/json
+
+{
+  "name": "Tom Cruise",
+  "aliases": ["Thomas Cruise Mapother IV"],
+  "bio": "Tom Cruise is an American actor and producer. He has received various accolades for his work, including three Golden Globe Awards and nominations for three Academy Awards.",
+  "image": "https://images.thedirect.com/media/photos/1tomcruise_62in1i4.png",
+  "movies": ["Top Gun", "Mission Impossible", "Jerry Maguire"]
+}
+
+### DELETE actor by id
+DELETE {{host}}/Actors/663755f01129221727af4964
+
+
+### PUT actor by id
+PUT {{host}}/Actors/663755e91129221727af4963
+Content-Type: application/json
+
+{
+  "name": "Tom Cruise",
+  "aliases": ["Thomas Cruise Mapother IV"],
+  "biography": "Tom Cruise is an American actor and producer. He has received various accolades for his work, including three Golden Globe Awards and nominations for three Academy Awards.",
+  "image": "https://images.thedirect.com/media/photos/1tomcruise_62in1i4.png",
+  "movies": ["Top Gun", "Mission Impossible", "Jerry Maguire", "Edge of Tomorrow"]
+}
+
+
