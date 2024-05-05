@@ -1,0 +1,18 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using NoSQL.MongoDB.Api.Models;
+
+namespace NoSQL.MongoDB.Api.Interfaces.Services;
+
+public interface IActorService
+{
+    Task<List<Actor>> GetAsync();
+    
+    Task<Actor?> GetByIdAsync(string id);
+    
+    Task<Actor> CreateAsync(Actor newActor);
+    
+    Task UpdateAsync(string id, Actor updatedActor);
+    
+    Task DeleteAsync(string id);
+}
