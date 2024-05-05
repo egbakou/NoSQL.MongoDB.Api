@@ -107,7 +107,7 @@ db.createCollection('actors');
 
 bitnami/mongodb could be replaced by mongo
 
-```
+```yaml
   # mongo
   mongo:
     container_name: mongo
