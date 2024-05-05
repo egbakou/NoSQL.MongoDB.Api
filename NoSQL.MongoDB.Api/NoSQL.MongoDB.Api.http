@@ -1,20 +1,23 @@
+#######################
+### Actors API
+#######################
 ### GET all actors
-GET {{host}}/Actors
+GET {{host}}/actors
 Accept: application/json
 
 ### GET actor by id
-GET {{host}}/Actors/663753841129221727af4962
+GET {{host}}/Actors/6637e74cb30ad1fae281aeca
 
 ### POST actor
 POST {{host}}/Actors
 Content-Type: application/json
 
 {
-  "name": "Tom Cruise",
-  "aliases": ["Thomas Cruise Mapother IV"],
-  "bio": "Tom Cruise is an American actor and producer. He has received various accolades for his work, including three Golden Globe Awards and nominations for three Academy Awards.",
-  "image": "https://images.thedirect.com/media/photos/1tomcruise_62in1i4.png",
-  "movies": ["Top Gun", "Mission Impossible", "Jerry Maguire"]
+  "name": "Donie Yen",
+  "aliases": ["Donnie Yen Ji-dan"],
+  "biography": "Donnie Yen Ji-dan is a Hong Kong actor, martial artist, film director, producer, action choreographer, and multiple-time world wushu tournament champion.",
+  "image": "https://media.philly.com/images/20160122_donnie_yen_ip_man_3x2.jpg",
+  "movies": ["Ip Man", "Rogue One: A Star Wars Story", "xXx: Return of Xander Cage", "Mulan"]
 }
 
 ### DELETE actor by id
@@ -22,15 +25,79 @@ DELETE {{host}}/Actors/663755f01129221727af4964
 
 
 ### PUT actor by id
-PUT {{host}}/Actors/663755e91129221727af4963
+PUT {{host}}/Actors/6637e93bb30ad1fae281aecd
 Content-Type: application/json
 
 {
-  "name": "Tom Cruise",
-  "aliases": ["Thomas Cruise Mapother IV"],
-  "biography": "Tom Cruise is an American actor and producer. He has received various accolades for his work, including three Golden Globe Awards and nominations for three Academy Awards.",
-  "image": "https://images.thedirect.com/media/photos/1tomcruise_62in1i4.png",
-  "movies": ["Top Gun", "Mission Impossible", "Jerry Maguire", "Edge of Tomorrow"]
+  "name": "Donie Yen",
+  "aliases": [
+    "Donnie Yen Ji-dan"
+  ],
+  "biography": "Donnie Yen Ji-dan is a Hong Kong actor, martial artist, film director, producer, action choreographer, and multiple-time world wushu tournament champion.",
+  "image": "https://media.philly.com/images/20160122_donnie_yen_ip_man_3x2.jpg",
+  "movies": [
+    "Ip Man",
+    "Rogue One: A Star Wars Story",
+    "xXx: Return of Xander Cage",
+    "Mulan"
+  ]
 }
 
 
+#######################
+### Movies API
+#######################
+### GET all movies
+GET {{host}}/Movies
+
+### GET movie by id
+GET {{host}}/Movies/6637f2d2b92f1f83362ab35a
+
+### POST movie
+POST {{host}}/Movies
+Content-Type: application/json
+
+{
+  "plot": "A meek Belgian soldier, fighting in World War I, receives a letter and a photo from \"Mary Brown\", an American girl he has never met. After the war, he travels to America searching for her.",
+  "genres": [
+    "Comedy",
+    "Drama",
+    "Romance",
+    "War"
+  ],
+  "runtime": 47,
+  "cast": [
+    "Charlie Chaplin",
+    "Edna Purviance",
+    "Sydney Chaplin",
+    "Jack Wilson"
+  ],
+  "poster": "https://m.media-amazon.com/images/M/MV5BMjUwMzQyMzI4MF5BMl5BanBnXkFtZTgwNjU5Njk5MTE@._V1_SY1000_SX677_AL_.jpg",
+  "title": "Shoulder Arms",
+  "fullplot": "Charlie is a boot camp private who has a dream of being a hero who goes on a daring mission behind enemy lines.",
+  "languages": [
+    "English"
+  ],
+  "released": "1918-10-20",
+  "directors": [
+    "Charles Chaplin"
+  ],
+  "rated": "Approved",
+  "awards": {
+    "wins": 1,
+    "nominations": 0,
+    "text": "1 win."
+  },
+  "lastupdated": "2015-08-29 00:19:02.040000000",
+  "year": 1918,
+  "imdb": {
+    "rating": 7.3,
+    "votes": 4381,
+    "id": 239
+  },
+  "countries": [
+    "USA"
+  ],
+  "type": "movie",
+  "numMflixComments": 0
+}
