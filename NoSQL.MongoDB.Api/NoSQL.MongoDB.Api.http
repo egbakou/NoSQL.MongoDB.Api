@@ -25,23 +25,25 @@ DELETE {{host}}/Actors/663755f01129221727af4964
 
 
 ### PUT actor by id
-PUT {{host}}/Actors/6637e93bb30ad1fae281aecd
+PUT {{host}}/Actors/6639cb27589fcf03ca6b8661
 Content-Type: application/json
 
 {
-  "name": "Donie Yen",
+  "_id": "6639cb27589fcf03ca6b8661",
+  "name": "Arnold Schwarzenegger",
   "aliases": [
-    "Donnie Yen Ji-dan"
+    "Arnold Alois Schwarzenegger"
   ],
-  "biography": "Donnie Yen Ji-dan is a Hong Kong actor, martial artist, film director, producer, action choreographer, and multiple-time world wushu tournament champion.",
-  "image": "https://media.philly.com/images/20160122_donnie_yen_ip_man_3x2.jpg",
+  "biography": "Arnold Alois Schwarzenegger is an Austrian-American actor, producer, businessman, retired bodybuilder, and former politician who served as the 38th governor of California from 2003 to 2011.",
+  "image": "https://static1.srcdn.com/wordpress/wp-content/uploads/2022/08/Why-Arnold-Schwarzenegger-Became-An-Actor.png",
   "movies": [
-    "Ip Man",
-    "Rogue One: A Star Wars Story",
-    "xXx: Return of Xander Cage",
-    "Mulan"
+    "Terminator",
+    "Predator",
+    "True Lies",
+    "Total Recall"
   ]
 }
+
 
 
 #######################
