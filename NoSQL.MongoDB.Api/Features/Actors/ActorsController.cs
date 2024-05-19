@@ -8,15 +8,8 @@ using NoSQL.MongoDB.Api.Models;
 
 namespace NoSQL.MongoDB.Api.Features.Actors;
 
-public class ActorsController : BaseApiController
+public class ActorsController(IActorService actorService) : BaseApiController
 {
-    private readonly IActorService _actorService;
-
-    public ActorsController(IActorService actorService)
-    {
-        _actorService = actorService;
-    }
-
     /// <summary>
     /// Get all actors
     /// </summary>
@@ -24,7 +17,7 @@ public class ActorsController : BaseApiController
     [HttpGet]
     public async Task<ActionResult<List<Actor>>> Get()
     {
-        return await _actorService.GetAsync();
+        return await actorService.GetAsync();
     }
 
     /// <summary>
@@ -35,7 +28,7 @@ public class ActorsController : BaseApiController
     [HttpGet("{id}")]
     public async Task<Results<NotFound, Ok<Actor>>>  GetById(string id)
     {
-        var actor = await _actorService.GetByIdAsync(id);
+        var actor = await actorService.GetByIdAsync(id);
         return actor is null ? TypedResults.NotFound() : TypedResults.Ok(actor);
     }
 
@@ -52,7 +45,7 @@ public class ActorsController : BaseApiController
             return TypedResults.BadRequest();
         }
 
-        var actor = await _actorService.CreateAsync(newActor);
+        var actor = await actorService.CreateAsync(newActor);
 
         var actionName = nameof(GetById); 
         var location = Url.Action(actionName, new { id = actor.Id });
@@ -68,13 +61,13 @@ public class ActorsController : BaseApiController
     public async Task<IActionResult> Delete(string id)
     {
         // Get the actor by id
-        var actor = await _actorService.GetByIdAsync(id);
+        var actor = await actorService.GetByIdAsync(id);
         if (actor is null)
         {
             return NotFound();
         }
         
-        await _actorService.DeleteAsync(id);
+        await actorService.DeleteAsync(id);
         return NoContent();
     }
     
@@ -88,7 +81,7 @@ public class ActorsController : BaseApiController
     public async Task<IActionResult> Update(string id, Actor updatedActor)
     {
         // Get the actor by id
-        var actor = await _actorService.GetByIdAsync(id);
+        var actor = await actorService.GetByIdAsync(id);
         if (actor is null)
         {
             return NotFound();
@@ -96,7 +89,7 @@ public class ActorsController : BaseApiController
         
         updatedActor.Id = id;
         
-        await _actorService.UpdateAsync(id, updatedActor);
+        await actorService.UpdateAsync(id, updatedActor);
         return NoContent();
     }
 }

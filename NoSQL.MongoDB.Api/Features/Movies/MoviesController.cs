@@ -62,7 +62,6 @@ public class MoviesController(IMovieService movieService) : BaseApiController
     /// <param name="updatedMovie">The updated values</param>
     /// <returns></returns>
     [HttpPut("{id:length(24)}")]
-    
     public async Task<IActionResult> UpdateAsync(string id, Movie updatedMovie)
     {
         await movieService.UpdateAsync(id, updatedMovie);
