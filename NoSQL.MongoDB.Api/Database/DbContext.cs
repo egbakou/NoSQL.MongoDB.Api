@@ -5,6 +5,9 @@ using NoSQL.MongoDB.Api.Models;
 
 namespace NoSQL.MongoDB.Api.Database;
 
+/// <summary>
+/// Represents the database context for MongoDB operations.
+/// </summary>
 public class DbContext
 {
     private readonly IMongoDatabase _database;
