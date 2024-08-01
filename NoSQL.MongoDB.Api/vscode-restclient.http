@@ -1,0 +1,34 @@
+
+### https://fakeapi.platzi.com/en/rest/auth-jwt/
+
+@baseUrl = https://api.escuelajs.co/api/v1
+@contentType = application/json
+
+###
+// this is a combination of custom variables(Prompt variables + request variables)
+// @name login
+// @prompt email
+// @prompt password
+POST {{$dotenv HOST}}/auth/login
+Content-Type: {{contentType}}
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+###
+// this is a combination of custom variables(file variables + request variables)
+@token = {{login.response.body.access_token}}
+#name profile
+GET {{baseUrl}}/auth/profile
+Authorization: Bearer {{token}}
+Content-Type: {{contentType}}
+
+###
+// this is a combination of custom variables(environnement + request variables)
+@token = {{login.response.body.access_token}}
+#name profile
+GET {{baseUrlFromSettingsJson}}/users
+Authorization: Bearer {{token}}
+Content-Type: {{$shared {{contentTypeFromSettingsJson}}}}
