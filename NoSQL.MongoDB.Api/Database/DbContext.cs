@@ -11,7 +11,7 @@ namespace NoSQL.MongoDB.Api.Database;
 public class DbContext
 {
     private readonly IMongoDatabase _database;
-
+    
     public DbContext(IOptions<MongoDbSettings> settings)
     {
         var settingsValue = settings.Value;
@@ -24,5 +24,9 @@ public class DbContext
     }
     
     public IMongoCollection<Movie> Movies => _database.GetCollection<Movie>("movies");
+    
+    /// <summary>
+    /// Gets the actors collection.
+    /// </summary>
     public IMongoCollection<Actor> Actors => _database.GetCollection<Actor>("actors");
 }
