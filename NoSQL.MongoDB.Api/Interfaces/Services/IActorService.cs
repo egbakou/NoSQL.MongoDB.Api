@@ -4,6 +4,9 @@ using NoSQL.MongoDB.Api.Models;
 
 namespace NoSQL.MongoDB.Api.Interfaces.Services;
 
+/// <summary>
+/// Interface for actor service operations.
+/// </summary>
 public interface IActorService
 {
     Task<List<Actor>> GetAsync();
