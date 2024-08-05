@@ -9,6 +9,9 @@ namespace NoSQL.MongoDB.Api.Interfaces.Services;
 /// </summary>
 public interface IActorService
 {
+    /// <summary>
+    /// Retrieves a list of actors.
+    /// </summary>
     Task<List<Actor>> GetAsync();
     
     Task<Actor?> GetByIdAsync(string id);
