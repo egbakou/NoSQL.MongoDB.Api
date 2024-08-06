@@ -14,6 +14,9 @@ public interface IActorService
     /// </summary>
     Task<List<Actor>> GetAsync();
     
+    /// <summary>
+    /// Retrieves an actor by its ID.
+    /// </summary>
     Task<Actor?> GetByIdAsync(string id);
     
     Task<Actor> CreateAsync(Actor newActor);
