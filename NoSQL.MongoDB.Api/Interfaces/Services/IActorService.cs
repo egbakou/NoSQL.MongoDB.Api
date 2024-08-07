@@ -19,6 +19,9 @@ public interface IActorService
     /// </summary>
     Task<Actor?> GetByIdAsync(string id);
     
+    /// <summary>
+    /// Creates a new actor.
+    /// </summary>
     Task<Actor> CreateAsync(Actor newActor);
     
     Task UpdateAsync(string id, Actor updatedActor);
