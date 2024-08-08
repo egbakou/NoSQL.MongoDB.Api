@@ -24,6 +24,9 @@ public interface IActorService
     /// </summary>
     Task<Actor> CreateAsync(Actor newActor);
     
+    /// <summary>
+    /// Updates an existing actor.
+    /// </summary>
     Task UpdateAsync(string id, Actor updatedActor);
     
     Task DeleteAsync(string id);
