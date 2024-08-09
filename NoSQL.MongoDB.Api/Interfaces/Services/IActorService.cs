@@ -29,5 +29,8 @@ public interface IActorService
     /// </summary>
     Task UpdateAsync(string id, Actor updatedActor);
     
+    /// <summary>
+    /// Deletes an actor by its ID.
+    /// </summary>
     Task DeleteAsync(string id);
 }
