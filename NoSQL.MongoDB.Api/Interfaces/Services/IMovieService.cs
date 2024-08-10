@@ -9,6 +9,9 @@ namespace NoSQL.MongoDB.Api.Interfaces.Services;
 /// </summary>
 public interface IMovieService
 {
+    /// <summary>
+    /// Retrieves a list of movies.
+    /// </summary>
     Task<List<Movie>> GetAsync();
     
     Task<Movie?> GetByIdAsync(string id);
