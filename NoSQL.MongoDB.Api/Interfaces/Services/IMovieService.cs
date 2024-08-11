@@ -14,6 +14,9 @@ public interface IMovieService
     /// </summary>
     Task<List<Movie>> GetAsync();
     
+    /// <summary>
+    /// Retrieves a movie by its ID.
+    /// </summary>
     Task<Movie?> GetByIdAsync(string id);
     
     Task<Movie> CreateAsync(Movie newMovie);
