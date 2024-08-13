@@ -24,6 +24,9 @@ public interface IMovieService
     /// </summary>
     Task<Movie> CreateAsync(Movie newMovie);
     
+    /// <summary>
+    /// Updates an existing movie.
+    /// </summary>
     Task UpdateAsync(string id, Movie updatedMovie);
     
     Task DeleteAsync(string id);
