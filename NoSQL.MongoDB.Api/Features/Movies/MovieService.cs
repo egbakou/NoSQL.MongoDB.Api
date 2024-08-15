@@ -7,6 +7,9 @@ using NoSQL.MongoDB.Api.Models;
 
 namespace NoSQL.MongoDB.Api.Features.Movies;
 
+/// <summary>
+/// Service for managing movie operations.
+/// </summary>
 public class MovieService(DbContext dbContext) : IMovieService
 {
     private readonly IMongoCollection<Movie> _movies = dbContext.Movies;
