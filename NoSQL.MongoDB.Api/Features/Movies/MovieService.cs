@@ -14,6 +14,7 @@ public class MovieService(DbContext dbContext) : IMovieService
 {
     private readonly IMongoCollection<Movie> _movies = dbContext.Movies;
 
+    /// <inheritdoc/>
     public async Task<List<Movie>> GetAsync()
     {
         // take only the first 10 movies
