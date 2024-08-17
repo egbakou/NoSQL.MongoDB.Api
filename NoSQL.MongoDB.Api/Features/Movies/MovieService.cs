@@ -23,6 +23,7 @@ public class MovieService(DbContext dbContext) : IMovieService
             .ToListAsync();
     }
 
+    /// <inheritdoc/>
     public async Task<Movie?> GetByIdAsync(string id)
     {
         return await _movies.Find(movie => movie.Id == id)
