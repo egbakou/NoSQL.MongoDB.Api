@@ -30,6 +30,7 @@ public class MovieService(DbContext dbContext) : IMovieService
             .FirstOrDefaultAsync();
     }
 
+    /// <inheritdoc/>
     public async Task<Movie> CreateAsync(Movie newMovie)
     {
         await _movies.InsertOneAsync(newMovie);
