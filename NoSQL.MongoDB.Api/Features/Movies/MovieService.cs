@@ -37,6 +37,7 @@ public class MovieService(DbContext dbContext) : IMovieService
         return newMovie;
     }
 
+    /// <inheritdoc/>
     // On update : MongoDB.Driver.MongoWriteException: A write operation resulted in an error. WriteError: { Category : "Uncategorized", Code : 66, Message : "After applying the update, the (immutable) field '_id' was found to have been altered to _id: null" }.
     // Avoid updating the Id field or setting it to null, updatedMovie.Id should be the same as id when updating
     public async Task UpdateAsync(string id, Movie updatedMovie)
