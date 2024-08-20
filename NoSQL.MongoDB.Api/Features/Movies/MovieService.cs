@@ -45,6 +45,7 @@ public class MovieService(DbContext dbContext) : IMovieService
         await _movies.ReplaceOneAsync(movie => movie.Id == id, updatedMovie);
     }
 
+    /// <inheritdoc/>
     public async Task DeleteAsync(string id)
     {
         await _movies.DeleteOneAsync(movie => movie.Id == id);
