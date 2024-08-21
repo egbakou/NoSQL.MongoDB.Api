@@ -7,6 +7,9 @@ using NoSQL.MongoDB.Api.Models;
 
 namespace NoSQL.MongoDB.Api.Features.Actors;
 
+/// <summary>
+/// Service for managing actor operations.
+/// </summary>
 public class ActorService(DbContext dbContext) : IActorService
 {
     private readonly IMongoCollection<Actor> _actors = dbContext.Actors;
