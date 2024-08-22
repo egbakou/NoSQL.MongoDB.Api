@@ -14,6 +14,7 @@ public class ActorService(DbContext dbContext) : IActorService
 {
     private readonly IMongoCollection<Actor> _actors = dbContext.Actors;
 
+    /// <inheritdoc/>
     public async Task<List<Actor>> GetAsync()
     {
         return await _actors.Find(_ => true)
