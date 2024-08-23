@@ -22,6 +22,7 @@ public class ActorService(DbContext dbContext) : IActorService
             .ToListAsync();
     }
 
+    /// <inheritdoc/>
     public async Task<Actor?> GetByIdAsync(string id)
     {
         return await _actors.Find(actor => actor.Id == id)
