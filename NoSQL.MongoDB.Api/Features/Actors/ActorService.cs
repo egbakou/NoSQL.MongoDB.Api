@@ -29,6 +29,7 @@ public class ActorService(DbContext dbContext) : IActorService
             .FirstOrDefaultAsync();
     }
 
+    /// <inheritdoc/>
     public async Task<Actor> CreateAsync(Actor newActor)
     {
         await _actors.InsertOneAsync(newActor);
