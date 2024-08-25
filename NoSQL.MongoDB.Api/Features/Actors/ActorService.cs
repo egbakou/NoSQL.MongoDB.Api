@@ -36,6 +36,7 @@ public class ActorService(DbContext dbContext) : IActorService
         return newActor;
     }
     
+    /// <inheritdoc/>
     public async Task UpdateAsync(string id, Actor updatedActor)
     {
         await _actors.ReplaceOneAsync(actor => actor.Id == id, updatedActor);
