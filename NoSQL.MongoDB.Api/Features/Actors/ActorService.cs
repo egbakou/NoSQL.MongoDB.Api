@@ -42,7 +42,7 @@ public class ActorService(DbContext dbContext) : IActorService
         await _actors.ReplaceOneAsync(actor => actor.Id == id, updatedActor);
     }
     
-    
+    /// <inheritdoc/>
     public async Task DeleteAsync(string id)
     {
         await _actors.DeleteOneAsync(actor => actor.Id == id);
