@@ -35,13 +35,13 @@ public class ActorService(DbContext dbContext) : IActorService
         await _actors.InsertOneAsync(newActor);
         return newActor;
     }
-    
+
     /// <inheritdoc/>
     public async Task UpdateAsync(string id, Actor updatedActor)
     {
         await _actors.ReplaceOneAsync(actor => actor.Id == id, updatedActor);
     }
-    
+
     /// <inheritdoc/>
     public async Task DeleteAsync(string id)
     {
