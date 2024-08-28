@@ -1,0 +1,13 @@
+{
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "contentTypeFromSettingsJson": "application/json",
+        },
+        "staging": {
+            "baseUrlFromSettingsJson": "https://api.escuelajs.co/api/v1",
+        },
+        "production": {
+            "baseUrlFromSettingsJson": "https://api.escuelajs.co/api/v1",
+        }
+    }
+}
