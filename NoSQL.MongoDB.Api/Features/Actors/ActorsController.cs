@@ -8,6 +8,10 @@ using NoSQL.MongoDB.Api.Models;
 
 namespace NoSQL.MongoDB.Api.Features.Actors;
 
+/// <summary>
+/// Actors REST API Controller
+/// </summary>
+/// <param name="actorService">Actors service</param>
 public class ActorsController(IActorService actorService) : BaseApiController
 {
     /// <summary>
