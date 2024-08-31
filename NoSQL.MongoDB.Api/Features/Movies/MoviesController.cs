@@ -8,6 +8,10 @@ using NoSQL.MongoDB.Api.Models;
 
 namespace NoSQL.MongoDB.Api.Features.Movies;
 
+/// <summary>
+/// Movies REST API Controller
+/// </summary>
+/// <param name="movieService">Movie service</param>
 public class MoviesController(IMovieService movieService) : BaseApiController
 {
     /// <summary>
