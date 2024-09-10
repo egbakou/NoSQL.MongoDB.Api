@@ -12,6 +12,10 @@ public class DbContext
 {
     private readonly IMongoDatabase _database;
     
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DbContext"/> class.
+    /// </summary>
+    /// <param name="settings">The MongoDB settings</param>
     public DbContext(IOptions<MongoDbSettings> settings)
     {
         var settingsValue = settings.Value;
@@ -23,6 +27,9 @@ public class DbContext
         _database = client.GetDatabase(settingsValue.DatabaseName);
     }
     
+    /// <summary>
+    /// Gets the movies collection.
+    /// </summary>
     public IMongoCollection<Movie> Movies => _database.GetCollection<Movie>("movies");
     
     /// <summary>
