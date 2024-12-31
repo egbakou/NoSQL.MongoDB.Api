@@ -155,7 +155,6 @@ services:
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
             # https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-components
-            # when using specific user other than admin, database name should be specified and authSource should not be used
             - MongoDB__ConnectionString=mongodb://dev:S3cr3tPFGDdcv34@mongodb-primary:27017/sample_mflix?authSource=sample_mflix
             - MongoDB__Database=sample_mflix
     mongodb-primary:
