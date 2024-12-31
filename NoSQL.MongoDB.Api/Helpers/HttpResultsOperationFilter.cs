@@ -19,6 +19,7 @@ namespace NoSQL.MongoDB.Api.Helpers;
 
 /// <summary>
 /// OperationFilter to generate OAS response to action that return HttpResults type
+/// Fix: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2595
 /// </summary>
 public class HttpResultsOperationFilter : IOperationFilter
 {

@@ -1,6 +1,7 @@
 # This docker compose file is used to create a MongoDB replicaset with 2 nodes (primary and secondary) using bitnami/mongodb image.
 # The primary node is exposed on port 27017 and the secondary node is exposed on port 27018.
 # The primary node is also exposed on port 8081 using mongo-express image.
+# https://github.com/bitnami/containers/tree/main/bitnami/mongodb
 services:
     nosqlmongodbapi:
         container_name: nosqlmongodbapi
@@ -14,7 +15,6 @@ services:
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
             # https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-components
-            # when using specific user other than admin, database name should be specified and authSource should not be used
             - MongoDB__ConnectionString=mongodb://dev:S3cr3tPFGDdcv34@mongodb-primary:27017/sample_mflix?authSource=sample_mflix
             - MongoDB__Database=sample_mflix
     mongodb-primary:

@@ -108,7 +108,7 @@ db.createCollection('movies');
 db.createCollection('actors');
 ```
 
-bitnami/mongodb could be replaced by mongo
+bitnami/mongodb could be replaced by mongo(The Official docker image maintained by the Docker community)
 
 ```yaml
   # mongo
